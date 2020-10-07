@@ -1,14 +1,36 @@
 package Logic;
 import Data.AntagonistaPixar;
-import Data.PersonajeDisney;
-import Data.PersonajePixar;
+//import Data.PersonajeDisney;
+//import Data.PersonajePixar;
 import Data.ProtagonistaPixar;
+import Data.HeroeMarvel;
+import Data.VillanoMarvel;
 import IU.Interfaz;
 
 public class Main {
         static boolean cerrar=true;
         static boolean cerrar2=true;
+    public static String OpcionEscoger(int opcion){
+        String clase;
+        switch (opcion){
+            case 1:
+                clase="Pixar";
+            break;
+            case 2:
+                clase="Marvel";
+            break;
+            case 3:
+                clase="Star wars";
+            break;
+            default:
+                clase="Error";
+        }
+        return clase;
+    }
     public static void main(String[] args){
+        
+        String ProtPix[] = {"Nemo","Mike Wazowski","Buzz Lightyear"};
+        String AntPix[] = {"Darla","Randall","Sid"};
         
         String pNemo[] = {"Buscando a Nemo","Buscando a Dory"};
         String hNemo[] = {"Hacerse el muerto","Chocar s aleta"};
@@ -34,6 +56,41 @@ public class Main {
         AntagonistaPixar sid = new AntagonistaPixar("Sid", 12,"Animación", "Masculino",pbuzz,1995,
                 "Casa vecina", "Humano","Juguetes","Destruir juguetes", hsid);
         
+        String pThor[]={"Thor","Thor: The dark world","Thor: Ragnarok","Iron Man 2","The Avengers",
+            "Avengers: Age of Ultron","Doctor Strange","Avengers: Infinity War","Avengers: Endgame"};
+        String eThor[]={"Loki", "Surtur", "Hela", "Ultron", "Doctor Doom", "Galactus", "Thanos"};
+        String poThor[]={"Fuerza sobrehumana","Velocidad","Resistencia","Manipulacion del trueno"};
+        String pStrange[]={"Captain America: The Winter Soldier","Doctor Strange","Thor: Ragnarok","Avengers: Infinity War","Avengers: Endgame"};
+        String eStrange[]={"Dormammu", "Kaecilius", "Baron Mordo", "Beyonder", "Thanos"};
+        String poStrange[]={"Control de la magia","Esperanza de vida prolongada por el Ankh de la vida","Dueño del Ojo de Agamotto"};
+        String pAraña[]={"Iron Man 2","Ant-Man","Captain America: Civil War","Spider-Man: Homecoming","Avengers: Infinity War","Avengers: Endgame","Spider-Man: Far From Home"};
+        String eAraña[]={"Duende Verde","Doctor Octopus","Doctor Doom","Galactus", "Thanos"};
+        String poAraña[]={"Fuerza sobrehumana", "Velocidad", "Agilidad", "Resistencia", "Equilibrio","Sentido arácnido","Trepar por paredes"};
+        
+        
+        
+        HeroeMarvel thor = new HeroeMarvel("Thor",1500,"Live-Action","Masculino",pThor,1962,"Asgard","Asgardiano",eThor,poThor);
+        HeroeMarvel strange = new HeroeMarvel("Doctor Strange",90,"Live-Action","Maculino",pStrange,1963,"La tierra","Humano",eStrange,poStrange);
+        HeroeMarvel araña = new HeroeMarvel("Spiderman",17,"Animado y Live-Action","Masculino",pAraña,1962,"La tierra","Humano",eAraña,poAraña);
+        
+        String heroMar[]={thor.getNombre(),strange.getNombre(),araña.getNombre()};
+        
+        String pLoki[]={"Thor","The Avengers","Thor: The dark world","Thor: Ragnarok","Avengers: Infinity War","Avengers: Endgame"};
+        String eLoki[]={"Thor", "Odín", "Iron Man", "Hulk", "Los Vengadores", "Nick Fury", "Thanos"};
+        String poLoki[]={"Inteligencia sobrehumana", "fuerza", "longevidad", "magia que incluye proyecciones astrales", "vuelo","teleportación dimensional","telepatía"};
+        String pThanos[]={"The Avengers","Guardians of the Galaxy","Avengers: Age of Ultron","Thor: Ragnarok","Avengers: Infinity War","Avengers: Endgame"};
+        String eThanos[]={"Los Vengadores", "Guardianes de la Galaxia", "Galactus"};
+        String poThanos[]={"Inmortalidad","Inteligencia sobrehumana","Proyección y absorción de energía","Inmunidad a ataques psíquicos","Inmunidad a todas las enfermedades","Manipulación de la materia"};
+        String pUltron[]={"Avengers: Age of Ultron"};
+        String eUltron[]={"Los VengadoresLos","Los 4 Fantásticos"};
+        String poUltron[]={"Fuerza sobrehumana","Inteligencia artificial con cuerpo robótico","Resistencia extrema","Proyección de energía","Sus habilidades varían con cada diseño","Vuelo"};
+        
+        VillanoMarvel loki= new VillanoMarvel("Loki",1052,"Live-Action","Masculino",pLoki,1962,"Asgard","Gigante de Hielo","Stan Lee, Larry Lieber y Jack Kirby",eLoki,"Ser rey de Asgard y expulsar a Thor",poLoki);
+        VillanoMarvel thanos= new VillanoMarvel("Thanos",1000,"Live-Action","Masculino",pThanos,1973,"Titan","Titan","Jim Starlin",eThanos,"Restablecer el balance del universo",poThanos);
+        VillanoMarvel ultron= new VillanoMarvel("Ultron",0,"Live-Action","Masculino",pUltron,1963,"La Tierra","Robot",
+        "Roy Thomas y John Buscema",eUltron,"Destruir a la humanidad debido a que la consideraba un peligro para si misma",poUltron);
+        
+        String villMar[]={loki.getNombre(),thanos.getNombre(),"Ultron"};
         Interfaz.iniciar();
         while (cerrar){
             Interfaz.preguntarSeccion();
@@ -51,7 +108,7 @@ public class Main {
                 switch (opcion1) {
                     case 1: //PIXAR
                         nemo.presentarSeccion();
-                        Interfaz.preguntarPersonajePixar();
+                        Interfaz.preguntarPersonaje(OpcionEscoger(opcion1));
                         opcion2 = Interfaz.responder();
                         if (opcion2 == 4){
                             cerrar = false;
@@ -65,7 +122,7 @@ public class Main {
                         switch (opcion2) { //TIPO
                                 case 1:
                                     nemo.presentarSeccion();
-                                    Interfaz.preguntarProtaPixar();
+                                    Interfaz.preguntarProta(OpcionEscoger(opcion1),ProtPix);
                                     opcion3 = Interfaz.responder();
                                     if (opcion3 == 1){
                                         nemo.presentarPersonaje();
@@ -121,7 +178,7 @@ public class Main {
                                     
                                 case 2:
                                     darla.presentarSeccion();
-                                    Interfaz.preguntarAntPixar();
+                                    Interfaz.preguntarAnt(OpcionEscoger(opcion1),AntPix);
                                     opcion3 = Interfaz.responder();
                                     if (opcion3 == 1){
                                         darla.presentarPersonaje();
@@ -177,20 +234,141 @@ public class Main {
                             }
                         
                     case 2:
-                        break;
+                        thor.presentarSeccion();
+                        Interfaz.preguntarPersonaje(OpcionEscoger(opcion1));
+                        opcion2 = Interfaz.responder();
+                        if (opcion2 == 4){
+                            cerrar = false;
+                            cerrar2 = false;
+                            break;
+                        }
+                        if (opcion2 == 3){
+                            cerrar2 = false;
+                            break;
+                        }
+                        switch (opcion2) { //TIPO
+                                case 1:
+                                    nemo.presentarSeccion();
+                                    Interfaz.preguntarProta(OpcionEscoger(opcion1),heroMar);
+                                    opcion3 = Interfaz.responder();
+                                    if (opcion3 == 1){
+                                        thor.presentarPersonaje();
+                                        System.out.println(thor);
+                                        Interfaz.preguntar();
+                                        opcion4= Interfaz.responder();
+                                        if(opcion4==1){
+                                            break;
+                                        }
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;
+                                            }
+                                    }    
+                                    if (opcion3 == 2){
+                                        strange.presentarPersonaje();
+                                        System.out.println(strange);
+                                        Interfaz.preguntar();
+                                        opcion4= Interfaz.responder();
+                                        if(opcion4==1){
+                                            break;
+                                        }
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;
+                                            }
+                                    }
+                                    if (opcion3 == 3){
+                                        araña.presentarPersonaje();
+                                        System.out.println(araña);
+                                        Interfaz.preguntar();
+                                        opcion4= Interfaz.responder();
+                                        if(opcion4==1){
+                                            break;
+                                        }
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;
+                                            }    
+                                    }
+                                    if (opcion3 == 4){
+                                        break;
+                                    }
+                                    if (opcion3 == 5){
+                                        cerrar = false;
+                                        cerrar2 = false;
+                                        break;
+                                    }
+                                    break;
+                                case 2:
+                                    loki.presentarSeccion();
+                                    Interfaz.preguntarAnt(OpcionEscoger(opcion1),villMar);
+                                    opcion3 = Interfaz.responder();
+                                    if (opcion3 == 1){
+                                        loki.presentarPersonaje();
+                                        System.out.println(loki);
+                                        Interfaz.preguntar();
+                                        opcion4= Interfaz.responder();
+                                        if(opcion4==1){
+                                            break;
+                                        }
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;
+                                            }
+                                    }    
+                                    if (opcion3 == 2){
+                                        thanos.presentarPersonaje();
+                                        System.out.println(thanos);
+                                        Interfaz.preguntar();
+                                        opcion4= Interfaz.responder();
+                                        if(opcion4==1){
+                                            break;
+                                        }
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;
+                                            }
+                                    }
+                                    if (opcion3 == 3){
+                                        ultron.presentarPersonaje();
+                                        System.out.println(ultron);
+                                        Interfaz.preguntar();
+                                        opcion4= Interfaz.responder();
+                                        if(opcion4==1){
+                                            break;
+                                        }
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;
+                                            }    
+                                    }
+                                    if (opcion3 == 4){
+                                        break;
+                                    }
+                                    if (opcion3 == 5){
+                                        cerrar = false;
+                                        cerrar2 = false;
+                                        break;
+                                    }
+                                break;    
+                            }
                     case 3:
-                        
                         break;
                 default: 
                     System.out.println("Error");
                     cerrar=false;
                     cerrar2=false;
                     
-            } 
+             
             
                 }
-                }
+            }
+        }
     }
-    
 }
-    
