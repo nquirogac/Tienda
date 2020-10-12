@@ -1,9 +1,14 @@
 package IU;
-import java.util.Scanner;
 import Logic.Main;
-public class Interfaz { 
+import java.util.Scanner;
+
+public class Interfaz {
+    
     public static void iniciar(){
         System.out.println("\tBienvenido a la tienda de personajes de Disney");
+    }
+    public static void iniciarPixar(){
+        System.out.println("\tBienvenido a la sección de Pixar");
     }
     public static void preguntarSeccion(){
         System.out.println("\nEscoja la opción que desea ver:\n1. Personajes de Pixar\n2. Personajes de Marvel\n3. Personajes de Star wars\n4. Salir de la tienda");
@@ -12,6 +17,17 @@ public class Interfaz {
         Scanner x=new Scanner(System.in);
 	int opcion = x.nextInt();
 	return opcion;
+    }
+    public static int[] responderp(int n){
+        Scanner x=new Scanner(System.in);
+        int a[] = new int[n];
+        System.out.println("Que producto o productos desea escoger:");
+        for(int i = 0; i < n; i++)
+        {
+            a[i] = x.nextInt();
+            
+        }
+        return a;
     }
     public static void preguntarPersonaje(String clase){
         System.out.printf("\nEscoja que tipo de personaje de %s desea ver:\n1. Protagonistas de %s\n2. Antagonistas de %s\n3. Volver a la sección anterior\n4. Salir de la tienda\n",clase,clase,clase);
@@ -27,4 +43,3 @@ public class Interfaz {
     }
     
 }
-
