@@ -109,6 +109,7 @@ public class Main {
             int opcion2;
             int opcion3;
             int opcion4;
+            int[] opcion5;
             opcion1 = Interfaz.responder();
             if (opcion1 == 4){
                 cerrar = false;
@@ -148,34 +149,34 @@ public class Main {
                                         break;
                                     }
                                     if (opcion3==1){
-                                        Interfaz.preguntarProPixar();
-                                        opcion4 = Interfaz.responderp(1);
-                                        if(opcion4[0]==1){
+                                        Interfaz.preguntarProta(OpcionEscoger(opcion1),propix);
+                                        opcion5 = Interfaz.responderp(1);
+                                        if(opcion5[0]==1){
                                             System.out.println(protagonistaspixar.get("Nemo"));
                                             Interfaz.preguntar();
-                                            opcion5=Interfaz.responder();
-                                            if(opcion5==1){break;}
-                                            if (opcion5==2){
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
                                                 cerrar = false;
                                                 cerrar2 = false;
                                                 break;}
                                         }
-                                        if(opcion4[0]==2){
+                                        if(opcion5[0]==2){
                                             System.out.println(protagonistaspixar.get("Mike"));
                                             Interfaz.preguntar();
-                                            opcion5=Interfaz.responder();
-                                            if(opcion5==1){break;}
-                                            if (opcion5==2){
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
                                                 cerrar = false;
                                                 cerrar2 = false;
                                                 break;}
                                         }
-                                        if(opcion4[0]==3){
+                                        if(opcion5[0]==3){
                                             System.out.println(protagonistaspixar.get("Buzz"));
                                             Interfaz.preguntar();
-                                            opcion5=Interfaz.responder();
-                                            if(opcion5==1){break;}
-                                            if (opcion5==2){
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
                                                 cerrar = false;
                                                 cerrar2 = false;
                                                 break;}
@@ -183,9 +184,9 @@ public class Main {
                                         else{System.out.println("Error");break;}
                                     }
                                     if(opcion3==2){
-                                        Interfaz.preguntarProPixar();
-                                        opcion4 = Interfaz.responderp(2);
-                                        for(int i : opcion4){
+                                        Interfaz.preguntarProta(OpcionEscoger(opcion1),propix);
+                                        opcion5 = Interfaz.responderp(2);
+                                        for(int i : opcion5){
                                             if(i==1){
                                                 System.out.println(protagonistaspixar.get("Nemo")+"\n");
                                                 continue;
@@ -196,7 +197,6 @@ public class Main {
                                             }
                                             if(i==3){
                                                 System.out.println(protagonistaspixar.get("Buzz")+"\n");
-                                                continue;
                                             }
                                             else{
                                                 System.out.println(i);
@@ -205,9 +205,9 @@ public class Main {
                                             
                                         }
                                         Interfaz.preguntar();
-                                        opcion5=Interfaz.responder();
-                                        if(opcion5==1){break;}
-                                        if (opcion5==2){
+                                        opcion4=Interfaz.responder();
+                                        if(opcion4==1){break;}
+                                        if (opcion4==2){
                                             cerrar = false;
                                             cerrar2 = false;
                                             break;}
@@ -217,9 +217,9 @@ public class Main {
                                         System.out.println(protagonistaspixar.get("Mike")+"\n");
                                         System.out.println(protagonistaspixar.get("Buzz")+"\n");
                                         Interfaz.preguntar();
-                                        opcion5=Interfaz.responder();
-                                        if(opcion5==1){break;}
-                                        if (opcion5==2){
+                                        opcion4=Interfaz.responder();
+                                        if(opcion4==1){break;}
+                                        if (opcion4==2){
                                             cerrar = false;
                                             cerrar2 = false;
                                             break;}
@@ -240,34 +240,34 @@ public class Main {
                                         break;
                                     }
                                     if (opcion3==1){
-                                        Interfaz.preguntarAntPixar();
-                                        opcion4 = Interfaz.responderp(1);
-                                        if(opcion4[0]==1){
+                                        Interfaz.preguntarAnt(OpcionEscoger(opcion1),antpix);
+                                        opcion5 = Interfaz.responderp(1);
+                                        if(opcion5[0]==1){
                                             System.out.println(antagonistaspixar.get("Darla"));
                                             Interfaz.preguntar();
-                                            opcion5=Interfaz.responder();
-                                            if(opcion5==1){break;}
-                                            if (opcion5==2){
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
                                                 cerrar = false;
                                                 cerrar2 = false;
                                                 break;}
                                         }
-                                        if(opcion4[0]==2){
+                                        if(opcion5[0]==2){
                                             System.out.println(antagonistaspixar.get("Randall"));
                                             Interfaz.preguntar();
-                                            opcion5=Interfaz.responder();
-                                            if(opcion5==1){break;}
-                                            if (opcion5==2){
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
                                                 cerrar = false;
                                                 cerrar2 = false;
                                                 break;}
                                         }
-                                        if(opcion4[0]==3){
+                                        if(opcion5[0]==3){
                                             System.out.println(antagonistaspixar.get("Sid"));
                                             Interfaz.preguntar();
-                                            opcion5=Interfaz.responder();
-                                            if(opcion5==1){break;}
-                                            if (opcion5==2){
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
                                                 cerrar = false;
                                                 cerrar2 = false;
                                                 break;}
@@ -275,9 +275,9 @@ public class Main {
                                         else{System.out.println("Error");break;}
                                     }
                                     if(opcion3==2){
-                                        Interfaz.preguntarAntPixar();
-                                        opcion4 = Interfaz.responderp(2);
-                                        for(int i : opcion4){
+                                        Interfaz.preguntarAnt(OpcionEscoger(opcion1),antpix);
+                                        opcion5 = Interfaz.responderp(2);
+                                        for(int i : opcion5){
                                             if(i==1){
                                                 System.out.println(antagonistaspixar.get("Darla")+"\n");
                                                 continue;
@@ -288,7 +288,6 @@ public class Main {
                                             }
                                             if(i==3){
                                                 System.out.println(antagonistaspixar.get("Sid")+"\n");
-                                                continue;
                                             }
                                             else{
                                                 System.out.println(i);
@@ -297,9 +296,9 @@ public class Main {
                                             
                                         }
                                         Interfaz.preguntar();
-                                        opcion5=Interfaz.responder();
-                                        if(opcion5==1){break;}
-                                        if (opcion5==2){
+                                        opcion4=Interfaz.responder();
+                                        if(opcion4==1){break;}
+                                        if (opcion4==2){
                                             cerrar = false;
                                             cerrar2 = false;
                                             break;}
@@ -309,15 +308,15 @@ public class Main {
                                         System.out.println(antagonistaspixar.get("Randall")+"\n");
                                         System.out.println(antagonistaspixar.get("Sid")+"\n");
                                         Interfaz.preguntar();
-                                        opcion5=Interfaz.responder();
-                                        if(opcion5==1){break;}
-                                        if (opcion5==2){
+                                        opcion4=Interfaz.responder();
+                                        if(opcion4==1){break;}
+                                        if (opcion4==2){
                                             cerrar = false;
                                             cerrar2 = false;
                                             break;}
                                     }
                                 break;      
-                            }             
+                            }
                     case 2:
                         thor.presentarSeccion();
                         Interfaz.preguntarPersonaje(OpcionEscoger(opcion1));
