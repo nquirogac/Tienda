@@ -5,6 +5,8 @@ import Data.AntagonistaPixar;
 import Data.ProtagonistaPixar;
 import Data.HeroeMarvel;
 import Data.VillanoMarvel;
+import Data.HeroeStarWars;
+import Data.VillanoStarWars;
 import IU.Interfaz;
 
 public class Main {
@@ -89,6 +91,41 @@ public class Main {
         "Roy Thomas y John Buscema",eUltron,"Destruir a la humanidad debido a que la consideraba un peligro para si misma",poUltron);
         
         String villMar[]={loki.getNombre(),thanos.getNombre(),"Ultron"};
+            
+        String heroStar[] = {"Han Solo", "Luke Skywalker", "Leia Organa"};
+        String villStar[] = {"Darth Vader", "Jabba Desilijic Tiure", "Kylo Ren"};
+            
+        String pHan[]={"IV: Una nueva esperanza", "V: El Imperio contraataca", "VI: El retorno del jedi", 
+        		"VII: El despertar de la fuerza", "IX: El ascenso de Skywalker", "Han Solo: una historia de Star Wars"};
+        String eHan[]={"Jabba el Hutt", "Greedo", "Darth Vader", "4-LOM", "Boba Fett", "Dengar", "IG-88", "Zuckuss", "Imperio Galáctico", "Dryden Vos"};
+        String haHan[]={"Precisión al disparar con pistolas bláster", "Mecánico", "Starship pilot"};
+        String pLuke[]={"Star Wars: Episodio IV - Una nueva esperanza", "Star Wars: Episodio V - El Imperio contraataca",
+        		"Star Wars: Episodio VI - El Regreso del Jedi", "Star Wars: Episodio III - La venganza de los Sith", 
+        		"Star Wars: Episodio VII - El despertar de la Fuerza", "Star Wars: Episodio VIII - Los últimos Jedi", "Star Wars: Episodio IX - El ascenso de Skywalker"};
+        String eLuke[]={"Darth Vader", "Imperio Galáctico", "Palpatine", "Jabba el Hutt", "Boba Fett", "Primera Orden"};
+        String haLuke[]={"Curar con la Fuerza", "Levitación", "Espadachín", "Generar un escudo", "Crear Ilusiones", "Telapatía", "Desviar o devolver rayos de bláster a sus enemigos con su espada láser", "Absorber y disipar energía", "Rapidez"};
+        String pLeia[]={"Una Nueva Esperanza", "El Imperio Contraataca", "El Regreso del Jedi", "La Venganza de los Sith",
+        		"El Despertar de la Fuerza", "Rogue One: una historia de Star Wars", "Los últimos Jedi", "El ascenso de Skywalker"};
+        String eLeia[]={"Wilhuff Tarkin", "Darth Vader", "4-LOM", "Jabba el Hutt", "Boba Fett", "Dengar", "IG-88", "Zuckuss", "Imperio Galáctico", "Primera Orden", "Palpatine"};
+        String haLeia[]={"Generar un escudo", "Sentido de la Fuerza", "Mediadora capaz", "Precisión con pistolas bláster", "Sabe pilotear"};
+        
+        HeroeStarWars han = new HeroeStarWars("Han Solo",29,"Live-Action","Masculino",pHan,1977,"Corellia","Humano",eHan,"", haHan);
+        HeroeStarWars luke = new HeroeStarWars("Luke Skywalker",19,"Live-Action","Maculino",pLuke,1977,"Tatooine","Humano",eLuke,"Proteger el lado luminoso de la Fuerza",haLuke);
+        HeroeStarWars leia = new HeroeStarWars("Leia Organa",19,"Live-Action","Femenino",pLeia,1977,"Alderaan","Humana",eLeia,"",haLeia);
+        
+        String pDarth[]={"IV: Una nueva esperanza", "V: El Imperio contraataca", "VI: El retorno del jedi", "VII: El despertar de la fuerza", "IX: El ascenso de Skywalker", "Han Solo: una historia de Star Wars"};
+        String eDarth[]={"Alianza Rebelde", "Jedi"};
+        String haDarth[]={"Telequinesis", "Crear campo de Fuerza", "Encubrimiento de Fuerza", "Destrucción de Fuerza", "Pies magnéticos", "Sinergia robóica", "Respirar bajo el agua"};
+        String pJabba[]={"Star Wars: Episodio IV - Una nueva esperanza", "Star Wars: Episodio VI - El Regreso del Jedi", "Star Wars: Episodio I - La amenaza fantasma"};
+        String eJabba[]={"Han Solo", "Luke Skywalker", "Leia Organa", "Alianza Rebelde"};
+        String haJabba[]={"Narcotraficante", "Operar y dirigir un imperio criminal", "Apetito insaciable"};
+        String pKylo[]={"Star Wars Episodio VII: El Despertar de la Fuerza", "Star Wars: Episodio VIII - Los últimos Jedi", "Star Wars: Episodio IX - El ascenso de Skywalker"};
+        String eKylo[]={"Resistencia"};
+        String haKylo[]={"Telequinesis", "Telepatía", "Persuasión de Fuerza", "Jalar y empujar con la Fuerza", "Detectar perturbaciones en la Fuerza"};
+        
+        VillanoStarWars darth = new VillanoStarWars("Darth Vader",45,"Live-Action","Masculino",pDarth,1983,"Tatooine","Cyborg-Humano",eDarth,"Cazar a todos aquellos que eran sensibles a la Fuerza en toda la galaxia",haDarth);
+        VillanoStarWars jabba = new VillanoStarWars("Jabba Desilijic Tiure",600,"Live-Action","Maculino",pJabba,1977,"Nal Hutta","Hutt",eJabba,"",haJabba);
+        VillanoStarWars kylo = new VillanoStarWars("Kylo Ren",29,"Live-Action","Masculino",pKylo,2015,"Chandrila","Crandilano",eKylo,"Destrucción de todo residuo de la doctrina Jedi",haKylo);
         
         HashMap<String,PersonajePixar> protagonistaspixar = new HashMap<String, PersonajePixar>();
         TreeMap<String,PersonajePixar> antagonistaspixar = new TreeMap<String, PersonajePixar >();
@@ -442,7 +479,7 @@ public class Main {
                                     }
                                 break;    
                             }
-                    case 3:
+                    case 3: //Star Wars
                         break;
                 default: 
                     System.out.println("Error");
