@@ -8,7 +8,7 @@ abstract public class PersonajeDisney {
     private String genero;
     
     abstract public void presentarSeccion();
-    
+    abstract public void presentarPersonaje();
     public PersonajeDisney(String nombre,int edad, String tipo, String genero){
         this.nombre = nombre;
         this.edad = edad;
