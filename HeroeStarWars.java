@@ -6,18 +6,18 @@ final public class HeroeStarWars extends PersonajeStarWars{
     private String[] habilidades;
     final long precio = 70000; 
     
-    public ProtagonistaStarWars(String nombre, int edad, String tipo, String genero, String[] peliculas,
-            int año, String hogar, String especie, String[] enemigo, String mision, String[] habilidades){
-        super(nombre, edad, tipo, genero, peliculas, año, hogar,  especie);
+    public HeroeStarWars(String nombre, int edad, String tipo, String genero, String[] peliculas,
+            int aÃ±o, String hogar, String especie, String[] enemigo, String mision, String[] habilidades){
+        super(nombre, edad, tipo, genero, peliculas, aÃ±o, hogar,  especie);
         this.enemigo = enemigo;
-        this.poderes = poderes;
+        this.habilidades = habilidades;
         this.mision = mision;
         
     }
     public void presentarSeccion1(){
         System.out.println("\tHeroes de Star Wars");
     }
-    @Override   
+    @Override 
     public void presentarPersonaje(){
         System.out.println("Hola soy "+this.getNombre() + " el heroe de una pelicula de Star Wars");
     }
@@ -53,16 +53,16 @@ final public class HeroeStarWars extends PersonajeStarWars{
         for (String pelicula : this.getPeliculas()) {
             cadena1 +=" - "+pelicula;
         }
-        for (String habilidades : this.getHabiliades()) {
-            cadena2 +=" - "+habilidades;
+        for (String habilidad : this.getHabilidades()) {
+            cadena2 +=" - "+habilidad;
         }
         for (String enemigos : this.getEnemigo()) {
             cadena3 +=" - "+enemigos;
         }
         return ("Nombre: "+ this.getNombre()+"\nEdad: "+this.getEdad()+"\nTipo: "+this.getTipo()+"\nGenero: "+this.getGenero()+
-                "\nPeliculas: "+cadena1+"\nAño: "+this.getAñoDeAparicion()+
+                "\nPeliculas: "+cadena1+"\nAÃ±o: "+this.getAÃ±oDeAparicion()+
                 "\nHogar: "+this.getHogar()+"\nEspecie: "+this.getEspecie()+"\nEnemigo: "+cadena3+
-                "\nMisión: "+this.getMision()+"\nHabilidades: "+cadena2+"\nPrecio: $"+this.precio);
+                "\nMisiÃ³n: "+this.getMision()+"\nHabilidades: "+cadena2+"\nPrecio: $"+this.precio);
     }
 }
 
