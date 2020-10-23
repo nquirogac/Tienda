@@ -276,9 +276,6 @@ public class Main {
                                         PersonajeStarWars h = it.next();
                                         h.presentarPersonaje();
                                     }
-                                    /*for (PersonajeStarWars o: villstar){
-                                        o.presentarPersonaje();
-                                    }*/
                                     System.out.println();
                                     MostrarSP3("villano",p,opcion1,villStar);
                                 break;   
