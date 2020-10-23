@@ -16,9 +16,9 @@ import IU.Interfaz;
 import java.util.HashMap;
 import java.util.TreeMap;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Iterator;
 public class Main {
 
@@ -173,18 +173,17 @@ public class Main {
         PersonajeStarWars jabba = new VillanoStarWars("Jabba Desilijic Tiure",600,"Live-Action","Maculino",pJabba,1977,"Nal Hutta","Hutt",eJabba,"Hacerse más rico",haJabba);
         PersonajeStarWars kylo = new VillanoStarWars("Kylo Ren",29,"Live-Action","Masculino",pKylo,2015,"Chandrila","Crandilano",eKylo,"Destrucción de todo residuo de la doctrina Jedi",haKylo);
         
+        LinkedHashSet <PersonajeStarWars> herostar = new LinkedHashSet<>();
         HashSet <PersonajeStarWars> villstar = new HashSet<>();
-        TreeSet <PersonajeStarWars> herostar = new TreeSet<>();
-        
+
+        herostar.add(han);
+        herostar.add(luke);
+        herostar.add(leia);
+          
         villstar.add(darth);
         villstar.add(jabba);
         villstar.add(kylo);
         
-        
-        /*herostar.add(han);
-        herostar.add(luke);
-        herostar.add(leia);
-        */
         Interfaz.iniciar();
         while (cerrar) {
             Interfaz.preguntarSeccion();
@@ -242,11 +241,11 @@ public class Main {
                                     MostrarSP3("heroe",p,opcion1,heroMar);
                                 break;
                                 case 3:
-                                    /*for(Iterator<HeroeStarWars> it=herostar.iterator();it.hasNext();){
-                                        HeroeStarWars h = it.next();
-                                        h.presentarSeccion();
+                                    for(Iterator<PersonajeStarWars> it=herostar.iterator();it.hasNext();){
+                                        PersonajeStarWars h = it.next();
+                                        h.presentarPersonaje();
                                     }
-                                    System.out.println();*/
+                                    System.out.println();
                                     MostrarSP3("heroe",p,opcion1,heroStar);
                                 break;    
                                 default:System.out.println("Error");
