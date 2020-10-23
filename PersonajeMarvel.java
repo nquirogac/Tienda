@@ -19,6 +19,7 @@ public class PersonajeMarvel extends PersonajeDisney {
     final public void presentarSeccion() {
         System.out.println("****Usted se encuentra en la sección Marvel*****");
     }
+    @Override
     public void presentarPersonaje(){
         System.out.println("Hola soy un personaje de Marvel");
     }
