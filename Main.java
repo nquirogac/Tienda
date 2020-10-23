@@ -1,13 +1,14 @@
 package Logic;
 import Data.AntagonistaPixar;
-//import Data.PersonajeDisney;
-//import Data.PersonajePixar;
-import Data.ProtagonistaPixar;
 import Data.HeroeMarvel;
+import Data.PersonajeDisney;
+import Data.PersonajePixar;
+import Data.ProtagonistaPixar;
 import Data.VillanoMarvel;
-import Data.HeroeStarWars;
-import Data.VillanoStarWars;
 import IU.Interfaz;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 public class Main {
         static boolean cerrar=true;
@@ -28,11 +29,8 @@ public class Main {
                 clase="Error";
         }
         return clase;
-    }
+    }    
     public static void main(String[] args){
-        
-        String ProtPix[] = {"Nemo","Mike Wazowski","Buzz Lightyear"};
-        String AntPix[] = {"Darla","Randall","Sid"};
         
         String pNemo[] = {"Buscando a Nemo","Buscando a Dory"};
         String hNemo[] = {"Hacerse el muerto","Chocar s aleta"};
@@ -91,44 +89,10 @@ public class Main {
         "Roy Thomas y John Buscema",eUltron,"Destruir a la humanidad debido a que la consideraba un peligro para si misma",poUltron);
         
         String villMar[]={loki.getNombre(),thanos.getNombre(),"Ultron"};
-            
-        String heroStar[] = {"Han Solo", "Luke Skywalker", "Leia Organa"};
-        String villStar[] = {"Darth Vader", "Jabba Desilijic Tiure", "Kylo Ren"};
-            
-        String pHan[]={"IV: Una nueva esperanza", "V: El Imperio contraataca", "VI: El retorno del jedi", 
-        		"VII: El despertar de la fuerza", "IX: El ascenso de Skywalker", "Han Solo: una historia de Star Wars"};
-        String eHan[]={"Jabba el Hutt", "Greedo", "Darth Vader", "4-LOM", "Boba Fett", "Dengar", "IG-88", "Zuckuss", "Imperio Galáctico", "Dryden Vos"};
-        String haHan[]={"Precisión al disparar con pistolas bláster", "Mecánico", "Starship pilot"};
-        String pLuke[]={"Star Wars: Episodio IV - Una nueva esperanza", "Star Wars: Episodio V - El Imperio contraataca",
-        		"Star Wars: Episodio VI - El Regreso del Jedi", "Star Wars: Episodio III - La venganza de los Sith", 
-        		"Star Wars: Episodio VII - El despertar de la Fuerza", "Star Wars: Episodio VIII - Los últimos Jedi", "Star Wars: Episodio IX - El ascenso de Skywalker"};
-        String eLuke[]={"Darth Vader", "Imperio Galáctico", "Palpatine", "Jabba el Hutt", "Boba Fett", "Primera Orden"};
-        String haLuke[]={"Curar con la Fuerza", "Levitación", "Espadachín", "Generar un escudo", "Crear Ilusiones", "Telapatía", "Desviar o devolver rayos de bláster a sus enemigos con su espada láser", "Absorber y disipar energía", "Rapidez"};
-        String pLeia[]={"Una Nueva Esperanza", "El Imperio Contraataca", "El Regreso del Jedi", "La Venganza de los Sith",
-        		"El Despertar de la Fuerza", "Rogue One: una historia de Star Wars", "Los últimos Jedi", "El ascenso de Skywalker"};
-        String eLeia[]={"Wilhuff Tarkin", "Darth Vader", "4-LOM", "Jabba el Hutt", "Boba Fett", "Dengar", "IG-88", "Zuckuss", "Imperio Galáctico", "Primera Orden", "Palpatine"};
-        String haLeia[]={"Generar un escudo", "Sentido de la Fuerza", "Mediadora capaz", "Precisión con pistolas bláster", "Sabe pilotear"};
-        
-        HeroeStarWars han = new HeroeStarWars("Han Solo",29,"Live-Action","Masculino",pHan,1977,"Corellia","Humano",eHan,"", haHan);
-        HeroeStarWars luke = new HeroeStarWars("Luke Skywalker",19,"Live-Action","Maculino",pLuke,1977,"Tatooine","Humano",eLuke,"Proteger el lado luminoso de la Fuerza",haLuke);
-        HeroeStarWars leia = new HeroeStarWars("Leia Organa",19,"Live-Action","Femenino",pLeia,1977,"Alderaan","Humana",eLeia,"",haLeia);
-        
-        String pDarth[]={"IV: Una nueva esperanza", "V: El Imperio contraataca", "VI: El retorno del jedi", "VII: El despertar de la fuerza", "IX: El ascenso de Skywalker", "Han Solo: una historia de Star Wars"};
-        String eDarth[]={"Alianza Rebelde", "Jedi"};
-        String haDarth[]={"Telequinesis", "Crear campo de Fuerza", "Encubrimiento de Fuerza", "Destrucción de Fuerza", "Pies magnéticos", "Sinergia robóica", "Respirar bajo el agua"};
-        String pJabba[]={"Star Wars: Episodio IV - Una nueva esperanza", "Star Wars: Episodio VI - El Regreso del Jedi", "Star Wars: Episodio I - La amenaza fantasma"};
-        String eJabba[]={"Han Solo", "Luke Skywalker", "Leia Organa", "Alianza Rebelde"};
-        String haJabba[]={"Narcotraficante", "Operar y dirigir un imperio criminal", "Apetito insaciable"};
-        String pKylo[]={"Star Wars Episodio VII: El Despertar de la Fuerza", "Star Wars: Episodio VIII - Los últimos Jedi", "Star Wars: Episodio IX - El ascenso de Skywalker"};
-        String eKylo[]={"Resistencia"};
-        String haKylo[]={"Telequinesis", "Telepatía", "Persuasión de Fuerza", "Jalar y empujar con la Fuerza", "Detectar perturbaciones en la Fuerza"};
-        
-        VillanoStarWars darth = new VillanoStarWars("Darth Vader",45,"Live-Action","Masculino",pDarth,1983,"Tatooine","Cyborg-Humano",eDarth,"Cazar a todos aquellos que eran sensibles a la Fuerza en toda la galaxia",haDarth);
-        VillanoStarWars jabba = new VillanoStarWars("Jabba Desilijic Tiure",600,"Live-Action","Maculino",pJabba,1977,"Nal Hutta","Hutt",eJabba,"",haJabba);
-        VillanoStarWars kylo = new VillanoStarWars("Kylo Ren",29,"Live-Action","Masculino",pKylo,2015,"Chandrila","Crandilano",eKylo,"Destrucción de todo residuo de la doctrina Jedi",haKylo);
-        
-        HashMap<String,PersonajePixar> protagonistaspixar = new HashMap<String, PersonajePixar>();
-        TreeMap<String,PersonajePixar> antagonistaspixar = new TreeMap<String, PersonajePixar >();
+        String propix[]={nemo.getNombre(),mike.getNombre(),buzz.getNombre()};
+        String antpix[]={darla.getNombre(),randall.getNombre(),sid.getNombre()};
+        HashMap<String,PersonajePixar> protagonistaspixar = new HashMap<>();
+        TreeMap<String,PersonajePixar> antagonistaspixar = new TreeMap< >();
         
         protagonistaspixar.put("Nemo", nemo);
         protagonistaspixar.put("Mike", mike);
@@ -137,8 +101,18 @@ public class Main {
 
         antagonistaspixar.put("Darla", darla);
         antagonistaspixar.put("Randall", randall);
-        antagonistaspixar.put("Sid", sid);    
-            
+        antagonistaspixar.put("Sid", sid);
+        
+        ArrayList<HeroeMarvel>heroeM= new ArrayList<>();
+        heroeM.add(thor);
+        heroeM.add(strange);
+        heroeM.add(araña);
+        
+        ArrayList<VillanoMarvel>villanoM= new ArrayList<>();
+        villanoM.add(loki);
+        villanoM.add(thanos);
+        villanoM.add(ultron);
+        
         Interfaz.iniciar();
         while (cerrar){
             Interfaz.preguntarSeccion();
@@ -170,7 +144,7 @@ public class Main {
                         }
                         switch (opcion2) { //TIPO
                                 case 1:
-                                    nemo.presentarSeccion();
+                                    nemo.presentarSeccion1();
                                     for(PersonajePixar p: protagonistaspixar.values())
                                     {
                                 	p.presentarPersonaje();
@@ -239,7 +213,6 @@ public class Main {
                                                 System.out.println(i);
                                                 System.out.println("Error");
                                             }
-                                            
                                         }
                                         Interfaz.preguntar();
                                         opcion4=Interfaz.responder();
@@ -262,8 +235,8 @@ public class Main {
                                             break;}
                                     }
                                 break;    
-                           case 2:
-                                    darla.presentarSeccion();
+                                case 2:
+                                    darla.presentarSeccion1();
                                     antagonistaspixar.values().forEach((p) -> {
                                         p.presentarPersonaje();});
                                     Interfaz.preguntarPPixar();
@@ -330,7 +303,6 @@ public class Main {
                                                 System.out.println(i);
                                                 System.out.println("Error");
                                             }
-                                            
                                         }
                                         Interfaz.preguntar();
                                         opcion4=Interfaz.responder();
@@ -369,51 +341,12 @@ public class Main {
                         }
                         switch (opcion2) { //TIPO
                                 case 1:
-                                    nemo.presentarSeccion();
-                                    Interfaz.preguntarProta(OpcionEscoger(opcion1),heroMar);
+                                    thor.presentarSeccion1();
+                                    for (HeroeMarvel i:heroeM){
+                                        i.presentarPersonaje();
+                                    }
+                                    Interfaz.preguntarPPixar();
                                     opcion3 = Interfaz.responder();
-                                    if (opcion3 == 1){
-                                        thor.presentarPersonaje();
-                                        System.out.println(thor);
-                                        Interfaz.preguntar();
-                                        opcion4= Interfaz.responder();
-                                        if(opcion4==1){
-                                            break;
-                                        }
-                                        if (opcion4==2){
-                                            cerrar = false;
-                                            cerrar2 = false;
-                                            break;
-                                            }
-                                    }    
-                                    if (opcion3 == 2){
-                                        strange.presentarPersonaje();
-                                        System.out.println(strange);
-                                        Interfaz.preguntar();
-                                        opcion4= Interfaz.responder();
-                                        if(opcion4==1){
-                                            break;
-                                        }
-                                        if (opcion4==2){
-                                            cerrar = false;
-                                            cerrar2 = false;
-                                            break;
-                                            }
-                                    }
-                                    if (opcion3 == 3){
-                                        araña.presentarPersonaje();
-                                        System.out.println(araña);
-                                        Interfaz.preguntar();
-                                        opcion4= Interfaz.responder();
-                                        if(opcion4==1){
-                                            break;
-                                        }
-                                        if (opcion4==2){
-                                            cerrar = false;
-                                            cerrar2 = false;
-                                            break;
-                                            }    
-                                    }
                                     if (opcion3 == 4){
                                         break;
                                     }
@@ -422,72 +355,182 @@ public class Main {
                                         cerrar2 = false;
                                         break;
                                     }
-                                    break;
-                                case 2:
-                                    loki.presentarSeccion();
-                                    Interfaz.preguntarAnt(OpcionEscoger(opcion1),villMar);
-                                    opcion3 = Interfaz.responder();
-                                    if (opcion3 == 1){
-                                        loki.presentarPersonaje();
-                                        System.out.println(loki);
-                                        Interfaz.preguntar();
-                                        opcion4= Interfaz.responder();
-                                        if(opcion4==1){
-                                            break;
+                                    if (opcion3==1){
+                                        Interfaz.preguntarProta(OpcionEscoger(opcion1),heroMar);
+                                        opcion5 = Interfaz.responderp(1);
+                                        if(opcion5[0]==1){
+                                            System.out.println(heroeM.get(0));
+                                            Interfaz.preguntar();
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
+                                                cerrar = false;
+                                                cerrar2 = false;
+                                                break;}
                                         }
-                                        if (opcion4==2){
-                                            cerrar = false;
-                                            cerrar2 = false;
-                                            break;
+                                        if(opcion5[0]==2){
+                                            System.out.println(heroeM.get(1));
+                                            Interfaz.preguntar();
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
+                                                cerrar = false;
+                                                cerrar2 = false;
+                                                break;}
+                                        }
+                                        if(opcion5[0]==3){
+                                            System.out.println(heroeM.get(2));
+                                            Interfaz.preguntar();
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
+                                                cerrar = false;
+                                                cerrar2 = false;
+                                                break;}
+                                        }
+                                        else{System.out.println("Error");break;}
+                                    }
+                                    if(opcion3==2){
+                                        Interfaz.preguntarProta(OpcionEscoger(opcion1),heroMar);
+                                        opcion5 = Interfaz.responderp(2);
+                                        for(int i : opcion5){
+                                            if(i==1){
+                                                System.out.println(heroeM.get(i--)+"\n");
+                                                continue;
                                             }
-                                    }    
-                                    if (opcion3 == 2){
-                                        thanos.presentarPersonaje();
-                                        System.out.println(thanos);
-                                        Interfaz.preguntar();
-                                        opcion4= Interfaz.responder();
-                                        if(opcion4==1){
-                                            break;
-                                        }
-                                        if (opcion4==2){
-                                            cerrar = false;
-                                            cerrar2 = false;
-                                            break;
+                                            if(i==2){
+                                                System.out.println(heroeM.get(i--)+"\n");
+                                                continue;
                                             }
-                                    }
-                                    if (opcion3 == 3){
-                                        ultron.presentarPersonaje();
-                                        System.out.println(ultron);
-                                        Interfaz.preguntar();
-                                        opcion4= Interfaz.responder();
-                                        if(opcion4==1){
-                                            break;
+                                            if(i==3){
+                                                System.out.println(heroeM.get(i--)+"\n");
+                                            }
+                                            else{
+                                                System.out.println(i);
+                                                System.out.println("Error");
+                                            }
                                         }
+                                        Interfaz.preguntar();
+                                        opcion4=Interfaz.responder();
+                                        if(opcion4==1){break;}
                                         if (opcion4==2){
                                             cerrar = false;
                                             cerrar2 = false;
-                                            break;
-                                            }    
+                                            break;}
                                     }
-                                    if (opcion3 == 4){
-                                        break;
-                                    }
-                                    if (opcion3 == 5){
-                                        cerrar = false;
-                                        cerrar2 = false;
-                                        break;
+                                    if(opcion3==3){
+                                        for (HeroeMarvel i:heroeM){
+                                            System.out.println(i);
+                                        }
+                                        Interfaz.preguntar();
+                                        opcion4=Interfaz.responder();
+                                        if(opcion4==1){break;}
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;}
                                     }
                                 break;    
+                                case 2:
+                                    loki.presentarSeccion1();
+                                    for (VillanoMarvel i:villanoM){
+                                        i.presentarPersonaje();
+                                    }
+                                    Interfaz.preguntarPPixar();
+                                    opcion3 = Interfaz.responder();
+                                    if (opcion3 == 4){
+                                        break;
+                                    }
+                                    if (opcion3 == 5){
+                                        cerrar = false;
+                                        cerrar2 = false;
+                                        break;
+                                    }
+                                    if (opcion3==1){
+                                        Interfaz.preguntarProta(OpcionEscoger(opcion1),villMar);
+                                        opcion5 = Interfaz.responderp(1);
+                                        if(opcion5[0]==1){
+                                            System.out.println(villanoM.get(0));
+                                            Interfaz.preguntar();
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
+                                                cerrar = false;
+                                                cerrar2 = false;
+                                                break;}
+                                        }
+                                        if(opcion5[0]==2){
+                                            System.out.println(villanoM.get(1));
+                                            Interfaz.preguntar();
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
+                                                cerrar = false;
+                                                cerrar2 = false;
+                                                break;}
+                                        }
+                                        if(opcion5[0]==3){
+                                            System.out.println(villanoM.get(2));
+                                            Interfaz.preguntar();
+                                            opcion4=Interfaz.responder();
+                                            if(opcion4==1){break;}
+                                            if (opcion4==2){
+                                                cerrar = false;
+                                                cerrar2 = false;
+                                                break;}
+                                        }
+                                        else{System.out.println("Error");break;}
+                                    }
+                                    if(opcion3==2){
+                                        Interfaz.preguntarProta(OpcionEscoger(opcion1),villMar);
+                                        opcion5 = Interfaz.responderp(2);
+                                        for(int i : opcion5){
+                                            if(i==1){
+                                                System.out.println(villanoM.get(i--)+"\n");
+                                                continue;
+                                            }
+                                            if(i==2){
+                                                System.out.println(villanoM.get(i--)+"\n");
+                                                continue;
+                                            }
+                                            if(i==3){
+                                                System.out.println(villanoM.get(i--)+"\n");
+                                            }
+                                            else{
+                                                System.out.println(i);
+                                                System.out.println("Error");
+                                            }
+                                        }
+                                        Interfaz.preguntar();
+                                        opcion4=Interfaz.responder();
+                                        if(opcion4==1){break;}
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;}
+                                    }
+                                    if(opcion3==3){
+                                        for (VillanoMarvel i:villanoM){
+                                            System.out.println(i);}
+                                        Interfaz.preguntar();
+                                        opcion4=Interfaz.responder();
+                                        if(opcion4==1){break;}
+                                        if (opcion4==2){
+                                            cerrar = false;
+                                            cerrar2 = false;
+                                            break;}
+                                    }
+                                break;      
                             }
-                    case 3: //Star Wars
+                    case 3:
                         break;
                 default: 
                     System.out.println("Error");
                     cerrar=false;
                     cerrar2=false;
-                 
-                }
+            } 
             }
         }
     }
 }
+   
