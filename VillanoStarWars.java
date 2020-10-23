@@ -2,14 +2,14 @@ package Data;
 
 final public class VillanoStarWars extends PersonajeStarWars{
     
-    private String enemigo; 
+    private String[] enemigo; 
     private String objetivo;
     private String[] habilidades;
     final long precio = 50000; 
     
-    public AntagonistaPixar(String nombre,int edad, String tipo, String genero, String[] peliculas,
-            int año, String hogar, String especie, String enemigo, String objetivo, String[] habilidades){
-        super(nombre, edad, tipo, genero, peliculas, año, hogar, especie);
+    public VillanoStarWars(String nombre,int edad, String tipo, String genero, String[] peliculas,
+            int aÃ±o, String hogar, String especie, String enemigo[], String objetivo, String[] habilidades){
+        super(nombre, edad, tipo, genero, peliculas, aÃ±o, hogar, especie);
         this.enemigo = enemigo;
         this.habilidades = habilidades;
         this.objetivo = objetivo;
@@ -51,19 +51,21 @@ final public class VillanoStarWars extends PersonajeStarWars{
     public String toString() {
         String cadena1 = "";
         String cadena2 = "";
+        String cadena3 = "";
         for (String pelicula : this.getPeliculas()) {
             cadena1 += pelicula +" - ";
         }
-        for (String habilidades : this.getHabilidades()) {
-            cadena2 += poderes +" - ";
+        for (String habilidad : this.getHabilidades()) {
+            cadena2 += habilidad +" - ";
         }
         for (String enemigos : this.getEnemigo()) {
             cadena3 +=" - "+enemigos;
         }
         return ("Nombre: "+ this.getNombre()+"\nEdad: "+this.getEdad()+"\nTipo: "+this.getTipo()+"\nGenero: "+this.getGenero()+
-                "\nPeliculas: "+cadena1+"\nAño: "+this.getAñoDeAparicion()+
+                "\nPeliculas: "+cadena1+"\nAÃ±o: "+this.getAÃ±oDeAparicion()+
                 "\nHogar: "+this.getHogar()+"\nEspecie: "+this.getEspecie()+"\nEnemigo: "+cadena3+
                 "\nObjetivo: "+this.getObjetivo()+"\nHabilidades: "+cadena2+"\nPrecio: $"+this.precio);
     }
+
 }    
 
