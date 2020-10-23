@@ -3,21 +3,22 @@ package Data;
 public class PersonajeStarWars extends PersonajeDisney {
     
     private String[] peliculas;
-    private int añoDeAparicion;
+    private int aÃ±oDeAparicion;
     private String hogar;
     private String especie;
            
-    public PersonajeStarWars(String nombre, int edad, String tipo, String genero, String[] peliculas, int año, String hogar, String especie){
+    public PersonajeStarWars(String nombre, int edad, String tipo, String genero, String[] peliculas, int aÃ±o, String hogar, String especie){
         super(nombre, edad, tipo, genero);
-        this.añoDeAparicion = año;
+        this.aÃ±oDeAparicion = aÃ±o;
         this.peliculas = peliculas;
         this.hogar = hogar;
         this.especie = especie;
     }       
     @Override
     final public void presentarSeccion() {
-        System.out.println("****Usted se encuentra en la sección Star Wars*****");
+        System.out.println("****Usted se encuentra en la secciÃ³n Star Wars*****");
     }
+    @Override
     public void presentarPersonaje(){
         System.out.println("Hola soy un personaje de Star Wars");
     }
@@ -30,12 +31,12 @@ public class PersonajeStarWars extends PersonajeDisney {
         this.peliculas = peliculas;
     }
 
-    public int getAñoDeAparicion() {
-        return this.añoDeAparicion;
+    public int getAÃ±oDeAparicion() {
+        return this.aÃ±oDeAparicion;
     }
 
-    public void setAñoDeAparicion(int añoDeAparicion) {
-        this.añoDeCreacion = añoDeAparicion;
+    public void setAÃ±oDeAparicion(int aÃ±oDeAparicion) {
+        this.aÃ±oDeAparicion = aÃ±oDeAparicion;
     }
 
     public String getHogar() {
