@@ -155,9 +155,9 @@ public class Main {
         String eLeia[]={"Wilhuff Tarkin", "Darth Vader", "4-LOM", "Jabba el Hutt", "Boba Fett", "Dengar", "IG-88", "Zuckuss", "Imperio Galáctico", "Primera Orden", "Palpatine"};
         String haLeia[]={"Generar un escudo", "Sentido de la Fuerza", "Mediadora capaz", "Precisión con pistolas bláster", "Sabe pilotear"};
         
-        PersonajeStarWars han = new HeroeStarWars("Han Solo",29,"Live-Action","Masculino",pHan,1977,"Corellia","Humano",eHan,"", haHan);
+        PersonajeStarWars han = new HeroeStarWars("Han Solo",29,"Live-Action","Masculino",pHan,1977,"Corellia","Humano",eHan,"Enfrentarse al Imperio Galáctico", haHan);
         PersonajeStarWars luke = new HeroeStarWars("Luke Skywalker",19,"Live-Action","Maculino",pLuke,1977,"Tatooine","Humano",eLuke,"Proteger el lado luminoso de la Fuerza",haLuke);
-        PersonajeStarWars leia = new HeroeStarWars("Leia Organa",19,"Live-Action","Femenino",pLeia,1977,"Alderaan","Humana",eLeia,"",haLeia);
+        PersonajeStarWars leia = new HeroeStarWars("Leia Organa",19,"Live-Action","Femenino",pLeia,1977,"Alderaan","Humana",eLeia,"Oponerse al Imperio Galáctico y restaurar la República",haLeia);
         
         String pDarth[]={"IV: Una nueva esperanza", "V: El Imperio contraataca", "VI: El retorno del jedi", "VII: El despertar de la fuerza", "IX: El ascenso de Skywalker", "Han Solo: una historia de Star Wars"};
         String eDarth[]={"Alianza Rebelde", "Jedi"};
@@ -170,7 +170,7 @@ public class Main {
         String haKylo[]={"Telequinesis", "Telepatía", "Persuasión de Fuerza", "Jalar y empujar con la Fuerza", "Detectar perturbaciones en la Fuerza"};
         
         PersonajeStarWars darth = new VillanoStarWars("Darth Vader",45,"Live-Action","Masculino",pDarth,1983,"Tatooine","Cyborg-Humano",eDarth,"Cazar a todos aquellos que eran sensibles a la Fuerza en toda la galaxia",haDarth);
-        PersonajeStarWars jabba = new VillanoStarWars("Jabba Desilijic Tiure",600,"Live-Action","Maculino",pJabba,1977,"Nal Hutta","Hutt",eJabba,"",haJabba);
+        PersonajeStarWars jabba = new VillanoStarWars("Jabba Desilijic Tiure",600,"Live-Action","Maculino",pJabba,1977,"Nal Hutta","Hutt",eJabba,"Hacerse más rico",haJabba);
         PersonajeStarWars kylo = new VillanoStarWars("Kylo Ren",29,"Live-Action","Masculino",pKylo,2015,"Chandrila","Crandilano",eKylo,"Destrucción de todo residuo de la doctrina Jedi",haKylo);
         
         HashSet <PersonajeStarWars> villstar = new HashSet<>();
