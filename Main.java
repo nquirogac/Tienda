@@ -192,7 +192,7 @@ public class Main {
             int opcion3;
             int opcion4;
             ArrayList<Integer> opcion5;
-            int cantidadp;
+            //int cantidadp;
             opcion1 = Interfaz.responder();
             cerrar2 = true;
             if (opcion1 == 4){
