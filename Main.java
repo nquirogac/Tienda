@@ -156,7 +156,7 @@ public class Main {
         String haLeia[]={"Generar un escudo", "Sentido de la Fuerza", "Mediadora capaz", "Precisión con pistolas bláster", "Sabe pilotear"};
         
         PersonajeStarWars han = new HeroeStarWars("Han Solo",29,"Live-Action","Masculino",pHan,1977,"Corellia","Humano",eHan,"Enfrentarse al Imperio Galáctico", haHan);
-        PersonajeStarWars luke = new HeroeStarWars("Luke Skywalker",19,"Live-Action","Maculino",pLuke,1977,"Tatooine","Humano",eLuke,"Proteger el lado luminoso de la Fuerza",haLuke);
+        PersonajeStarWars luke = new HeroeStarWars("Luke Skywalker",19,"Live-Action","Maculino",pLuke,1977,"Tatooine","Humano",eLuke,"Oponerse al Imperio Galáctico y restaurar la República",haLuke);
         PersonajeStarWars leia = new HeroeStarWars("Leia Organa",19,"Live-Action","Femenino",pLeia,1977,"Alderaan","Humana",eLeia,"Oponerse al Imperio Galáctico y restaurar la República",haLeia);
         
         String pDarth[]={"IV: Una nueva esperanza", "V: El Imperio contraataca", "VI: El retorno del jedi", "VII: El despertar de la fuerza", "IX: El ascenso de Skywalker", "Han Solo: una historia de Star Wars"};
