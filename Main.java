@@ -34,10 +34,13 @@ public class Main {
         p.presentarSeccion();
         Interfaz.preguntarProta(tipo,OpcionEscoger(o1),lista);
     }
-    public static void MostrarSP4(PersonajeDisney p){
+    public static void MostrarSP4(PersonajeDisney p, boolean u){
         p.presentarPersonaje();
         System.out.println(p);
-        Interfaz.preguntar();
+        if (u){
+            Interfaz.preguntar();
+        }
+        
     }
     public static String OpcionEscoger(int opcion) {
         String clase;
@@ -192,7 +195,7 @@ public class Main {
             int opcion3;
             int opcion4;
             ArrayList<Integer> opcion5;
-            //int cantidadp;
+            boolean unico = true;
             opcion1 = Interfaz.responder();
             cerrar2 = true;
             if (opcion1 == 4){
@@ -200,6 +203,7 @@ public class Main {
                 cerrar2 = false;
             }
             while (cerrar2) {
+                unico = true;
                 PersonajeDisney p = null;
                 switch(opcion1){
                     case 1:p = nemo;
@@ -223,6 +227,7 @@ public class Main {
                     cerrar3 = false;
                 }
                 while (cerrar3){
+                    unico = true;
                     switch(opcion2){
                         case 1:
                             switch(opcion1){
@@ -297,39 +302,46 @@ public class Main {
                         cerrar4 = false;
                     }
                     while (cerrar4){
+                        unico = true;
                         switch(opcion1){
                             case 1:
                                 switch(opcion2){
                                     case 1:
                                         switch(opcion3){
-                                            case 1:MostrarSP4(nemo);
+                                            case 1:MostrarSP4(nemo,unico);
                                             break;
-                                            case 2:MostrarSP4(mike);
+                                            case 2:MostrarSP4(mike,unico);
                                             break;
-                                            case 3:MostrarSP4(buzz);
+                                            case 3:MostrarSP4(buzz,unico);
                                             break;
                                             case 4:
                                                 opcion5 = Interfaz.responderp();
+                                                unico = false;
                                                 for (Integer h:opcion5){
-                                                    MostrarSP4(protagonistaspixar.get(h));
+                                                    MostrarSP4(protagonistaspixar.get(h),unico);
+                                                    System.out.println();
                                                 }
+                                                Interfaz.preguntar();
                                             break;
                                             default:System.out.println("Error");
                                         }
                                     break;
                                     case 2:
                                         switch(opcion3){
-                                            case 1:MostrarSP4(darla);
+                                            case 1:MostrarSP4(darla,unico);
                                             break;
-                                            case 2:MostrarSP4(randall);
+                                            case 2:MostrarSP4(randall,unico);
                                             break;
-                                            case 3:MostrarSP4(sid);
+                                            case 3:MostrarSP4(sid,unico);
                                             break;
                                             case 4:
                                                 opcion5 = Interfaz.responderp();
                                                 for (Integer h:opcion5){
-                                                    MostrarSP4(antagonistaspixar.get(h));
+                                                    unico = false;
+                                                    MostrarSP4(antagonistaspixar.get(h),unico);
+                                                    System.out.println();
                                                 }
+                                                Interfaz.preguntar();
                                             break;
                                             default:System.out.println("Error");
                                         }
@@ -339,34 +351,40 @@ public class Main {
                                 switch(opcion2){
                                     case 1:
                                         switch(opcion3){
-                                            case 1:MostrarSP4(thor);
+                                            case 1:MostrarSP4(thor,unico);
                                             break;
-                                            case 2:MostrarSP4(strange);
+                                            case 2:MostrarSP4(strange,unico);
                                             break;
-                                            case 3:MostrarSP4(araña);
+                                            case 3:MostrarSP4(araña,unico);
                                             break;
                                             case 4:
                                                 opcion5 = Interfaz.responderp();
+                                                unico = false;                                                
                                                 for (Integer h:opcion5){
-                                                    MostrarSP4(heroemarvel.get(h-1));
+                                                    MostrarSP4(heroemarvel.get(h-1),unico);
+                                                    System.out.println();
                                                 }
+                                                Interfaz.preguntar();
                                             break;
                                             default:System.out.println("Error");
                                         }
                                     break;
                                     case 2:
                                         switch(opcion3){
-                                            case 1:MostrarSP4(loki);
+                                            case 1:MostrarSP4(loki,unico);
                                             break;
-                                            case 2:MostrarSP4(thanos);
+                                            case 2:MostrarSP4(thanos,unico);
                                             break;
-                                            case 3:MostrarSP4(ultron);
+                                            case 3:MostrarSP4(ultron,unico);
                                             break;
                                             case 4:
                                                 opcion5 = Interfaz.responderp();
+                                                unico = false;
                                                 for (Integer h:opcion5){
-                                                    MostrarSP4(villanomarvel.get(h-1));
+                                                    MostrarSP4(villanomarvel.get(h-1),unico);
+                                                    System.out.println();
                                                 }
+                                                Interfaz.preguntar();
                                             break;
                                             default:System.out.println("Error");
                                         }
@@ -376,11 +394,11 @@ public class Main {
                                 switch(opcion2){
                                     case 1:
                                         switch(opcion3){
-                                            case 1:MostrarSP4(han);
+                                            case 1:MostrarSP4(han,unico);
                                             break;
-                                            case 2:MostrarSP4(luke);
+                                            case 2:MostrarSP4(luke,unico);
                                             break;
-                                            case 3:MostrarSP4(leia);
+                                            case 3:MostrarSP4(leia,unico);
                                             break;
                                             case 4:
                                                 System.out.println("No esta disponible esta opcion");
@@ -391,11 +409,11 @@ public class Main {
                                     break;
                                     case 2:
                                         switch(opcion3){
-                                            case 1:MostrarSP4(darth);
+                                            case 1:MostrarSP4(darth,unico);
                                             break;
-                                            case 2:MostrarSP4(jabba);
+                                            case 2:MostrarSP4(jabba,unico);
                                             break;
-                                            case 3:MostrarSP4(kylo);
+                                            case 3:MostrarSP4(kylo,unico);
                                             break;
                                             case 4:
                                                 System.out.println("No esta disponible esta opcion");
