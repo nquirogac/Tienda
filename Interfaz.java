@@ -7,9 +7,6 @@ public class Interfaz {
     public static void iniciar(){
         System.out.println("\tBienvenido a la tienda de personajes de Disney");
     }
-    public static void iniciarPixar(){
-        System.out.println("\tBienvenido a la sección de Pixar");
-    }
     public static void preguntarSeccion(){
         System.out.println("\nEscoja la opción que desea ver:\n1. Personajes de Pixar\n2. Personajes de Marvel\n3. Personajes de Star wars\n4. Salir de la tienda");
     }
